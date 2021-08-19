@@ -112,3 +112,4 @@ int main()
 	system("pause");
 	return 0;
 }
+引用的本质是指针常量
