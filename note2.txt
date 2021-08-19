@@ -1,0 +1,23 @@
+//1、引用必须要初始化
+//int a=10;
+//int &b=a;
+//int &b;//是错误的
+//2、一旦引用初始化后，就不可以更改了
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int a=10;
+	int &b=a;
+	int &c=b;
+	cout<<a<<endl;
+	cout<<b<<endl;
+	cout<<c<<endl;
+	c=30;
+	cout<<a<<endl;
+	cout<<b<<endl;
+	cout<<c<<endl;
+	system("pause");
+	return 0;
+}
