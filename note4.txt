@@ -45,3 +45,33 @@ int main()
 	system("pause");
 	return 0;
 }
+
+#include<iostream>
+using namespace std;
+#include<string>
+//设计学生类
+class Student
+{
+public://公共权限
+	//属性
+	string name;//姓名
+	int id;//学号
+	//行为
+	void showStudent()
+	{
+		cout<<"姓名："<<name<<endl<<"学号："<<id<<endl;
+	}
+};
+int main()
+{
+	//创建具体学生 实例化对象
+	Student s;
+
+	s.name="张三";
+	s.id=1;
+	//输出学生信息
+	s.showStudent();
+
+	system("pause");
+	return 0;
+}
