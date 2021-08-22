@@ -112,3 +112,32 @@ int main()
 	system("pause");
 	return 0;
 }
+
+#include<iostream>
+using namespace std;
+//struct和class的区别
+//struct 默认权限是公共 public
+//class 默认权限是私有 private
+
+class C1
+{
+	int A;//默认权限是私有
+};
+
+struct C2
+{
+	int A;//默认权限是公共
+};
+
+int main()
+{
+
+	C1 c1;
+	//c1.A=100;私有权限不能访问
+	C2 c2;
+	c2.A=100;
+	system("pause");
+	return 0;
+}
+
+
