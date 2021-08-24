@@ -240,6 +240,106 @@ int main()
 	return 0;
 }
 
+#include<iostream>
+using namespace std;
+#include<string>
+//设计立方体类（Cube）
+//求出立方体的面积和体积
+//分别用全局函数和成员函数判断两个立方体是否相等
+
+//创建立方体类
+class Cube
+{
+public:
+	//行为
+
+	//设置长宽高
+	void set(int l,int w,int h)
+	{
+		m_l=l;
+		m_w=w;
+		m_h=h;
+	}
+	//获取长宽高
+	int getl()
+	{
+		return m_l;
+	}
+	int getw()
+	{
+		return m_w;
+	}
+	int geth()
+	{
+		return m_h;
+	}
+	//获取立方体面积
+	 int calculates()
+	 {
+		 return 2*(m_l*m_w+m_l*m_h+m_w*m_h);
+	 }
+	//获取立方体体积
+	 int calculatev()
+	 {
+		 return m_l*m_w*m_h;
+	 }
+	 //利用成员函数判断
+	 bool issamebycalss(Cube &c)
+	 {
+		if(m_l==c.getl()&&m_w==c.getw()&&m_h==c.geth())
+		{
+			return true;
+		}
+			return false;
+	 }
+private:
+	//属性
+	int m_l;//长
+	int m_w;//宽
+	int m_h;//高
+};
+bool issame(Cube &c1,Cube &c2)
+{
+	if(c1.getl()==c2.getl()&&c1.getw()==c2.getw()&&c1.geth()==c2.geth())
+	{
+		return true;
+	}
+	return false;
+}
+int main()
+{
+	Cube c1;
+	c1.set(10,10,10);
+	cout<<"c1的面积为："<<c1.calculates()<<endl;
+	cout<<"c1的体积为："<<c1.calculatev()<<endl;
+	Cube c2;
+	c2.set(10,10,10);
+	cout<<"c2的面积为："<<c2.calculates()<<endl;
+	cout<<"c2的体积为："<<c2.calculatev()<<endl;
+	bool ret=issame(c1,c2);
+	if(ret)
+	{
+		cout<<"c1和c2相等"<<endl;
+	}
+	else
+	{
+		cout<<"c1和c2不相等"<<endl;
+	}
+	//利用成员函数判断
+	ret=c1.issamebycalss(c2);
+	if(ret)
+	{
+		cout<<"成员函数判断c1和c2相等"<<endl;
+	}
+	else
+	{
+		cout<<"成员函数判断c1和c2不相等"<<endl;
+	}
+	system("pause");
+	return 0;
+}
+
+
 
 
 
