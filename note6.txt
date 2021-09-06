@@ -37,3 +37,49 @@ int main(){
 	system("pause");
 	return 0;
 }
+
+//类对象作为类成员
+//c++类中的成员可以是另一个类的对象，我们称该成员为对象成员
+
+#include<iostream>
+using namespace std;
+#include<string>
+//类对象作为类成员
+
+//手机类
+class Phone{
+public:
+	Phone(string Pname){
+		m_Pname=Pname;
+	}
+	string m_Pname;
+
+};
+//人类
+class Person{
+public:
+
+	
+	Person(string name,string Pname):m_name(name),m_Phone(Pname){//Phone m_Phone=Pname;隐式转换法
+	}
+
+	//姓名
+	string m_name;
+	//手机
+	Phone m_Phone;
+};
+
+void test01(){
+
+	Person p("张三","华为P50");
+	cout<<p.m_name<<"拿着"<<p.m_Phone.m_Pname<<endl;
+}
+
+int main(){
+
+
+	test01();
+	system("pause");
+
+	return 0;
+}
